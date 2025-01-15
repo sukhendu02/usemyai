@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     "./Components/**/*.{html,js,jsx}",
+    
   ],
   
   theme: {
@@ -11,7 +12,9 @@ export default {
     fontFamily: {
       sans: ['Fira Code', 'Inter'],
     },
+    
   },
   plugins: [],
+  darkMode: 'selector',
 }
 
