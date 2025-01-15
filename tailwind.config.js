@@ -12,6 +12,7 @@ export default {
     fontFamily: {
       sans: ['Fira Code', 'Inter'],
     },
+   
     
   },
   plugins: [],

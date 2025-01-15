@@ -2,6 +2,9 @@ import React from 'react'
 
 
 import { NavLink, Link } from "react-router-dom";
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import ImageSearchIcon from '@mui/icons-material/ImageSearch';
+
 
 export default function Sidebar() {
   return (
@@ -18,6 +21,9 @@ export default function Sidebar() {
             fontWeight: isActive ?"600":"600",
           })}
           className="block p-2 m-1 hover:bg-slate-100 dark:hover:bg-transparent dark:text-slate-300 rounded-2xl">
+            <DashboardIcon className='p-1 mx-2 bg-slate-500 rounded'
+          
+            />
           Home
       </NavLink>
       <NavLink
@@ -31,6 +37,7 @@ export default function Sidebar() {
             // background: isActive ? "#38BDF8" : "",
           })}
           className="block p-2 m-1 hover:bg-slate-100 hover:bg-transparent dark:text-slate-300 rounded-2xl">
+            <ImageSearchIcon className='p-1 mx-2 bg-slate-500 rounded dark:active:text-slate-300 ' />
           Project-1
       </NavLink>
       <NavLink
