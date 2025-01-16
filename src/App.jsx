@@ -10,6 +10,7 @@ import Project3 from './Components/Project3';
 import Home from './Components/Home';
 
 import { Routes,Route } from "react-router-dom"
+import Category from './Components/Category';
 
 function App() {
   
@@ -17,7 +18,10 @@ function App() {
   return (
     <>
     <Topbar/>
-    <main className=''>
+    <main className='dark:'>
+      <div className="catagory-container">
+        <Category/>
+      </div>
 
     <Routes>        
       <Route path="/"  element={<Home/>} />

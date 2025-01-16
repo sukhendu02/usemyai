@@ -2,6 +2,10 @@ import React from 'react'
 
 export default function Home() {
   return (
-    <div>Home</div>
+    <>
+      <div className='dark:bg-slate-700'>
+        home
+      </div>
+    </>
   )
 }
