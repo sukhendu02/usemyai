@@ -5,6 +5,12 @@ import Sidebar from './Sidebar';
 import MenuIcon from '@mui/icons-material/Menu';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+
+import HomeIcon from '@mui/icons-material/Home';
+// import  from '../Components/Topbar'
+
+import { NavLink } from "react-router-dom";
 
 
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
@@ -14,7 +20,8 @@ export default function Topbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
     
   const togglenav = () => {
-    setIsNavOpen(!isNavOpen);
+    setIsNavOpen(isNavOpen);
+
   };
 
 
@@ -39,7 +46,9 @@ export default function Topbar() {
 
   return (
     <>
-      <nav className='border-sm shadow-sm dark:bg-slate-800 dark:text-white dark:border-slate-200'>
+      <nav className= {`border-sm   shadow-sm dark:bg-slate-800 dark:text-white dark:border-slate-200 `}    
+      // ''
+      >
         <div className="flex justify-between items-center py-4">
 
           {/* <Link to="/">Logo</Link> */}
@@ -51,7 +60,7 @@ export default function Topbar() {
             <a className='mx-1' href="">Logo</a>
           </div>
 
-            <div className="other-links">
+            <div className="other-links hidden sm:block ">
               <Link className='px-3 text-sm '>Buy me coffee</Link>
               <Link className='px-3 text-sm '>Contribute</Link>
               <Link className='px-3 text-sm '>Blogs</Link>
@@ -112,10 +121,177 @@ export default function Topbar() {
                 </div>
               </MenuItems>
             </Menu>
+            <Menu as="div" className="relative inline-block text-left block sm:hidden">
+              <div>
+                <MenuButton className="px-2">
+                  
+              <MoreVertIcon className=''/>
+               
+                </MenuButton>
+              </div>
+
+              <MenuItems
+                transition
+                className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in dark:bg-slate-700 dark:text-slate-100"
+              >
+                <div className="py-1">
+                  <MenuItem>
+                <Link className='block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 dark:data-[focus]:bg-slate-500 data-[focus]:text-gray-900 dark:data-[focus]:text-slate-50 data-[focus]:outline-none dark:text-slate-100 dark:data-[focus]:text-slate-50'>Buy me coffee</Link>
+                   
+                  </MenuItem>
+                  <MenuItem>
+              <Link className='block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 dark:data-[focus]:bg-slate-500 data-[focus]:text-gray-900 dark:data-[focus]:text-slate-50 data-[focus]:outline-none dark:text-slate-100 dark:data-[focus]:text-slate-50'>Blogs</Link>
+                 
+                  </MenuItem>
+                  <MenuItem>
+              <Link className='block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 dark:data-[focus]:bg-slate-500 data-[focus]:text-gray-900 dark:data-[focus]:text-slate-50 data-[focus]:outline-none dark:text-slate-100 dark:data-[focus]:text-slate-50'>Contribute</Link>
+                   
+                  </MenuItem>
+                  <MenuItem>
+              <Link className='block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 dark:data-[focus]:bg-slate-500 data-[focus]:text-gray-900 dark:data-[focus]:text-slate-50 data-[focus]:outline-none dark:text-slate-100 dark:data-[focus]:text-slate-50'>About Us</Link>
+   
+                  </MenuItem>
+             
+                </div>
+              </MenuItems>
+            </Menu>
           </div>
         </div>
       </nav>
-      <Sidebar />
+
+
+      {/* SIDE NAV BAAR */}
+      <nav className={`sidenav fixed h-full  shadow-md dark:bg-slate-800 dark:text-white hidden sm:block
+       
+       `}>
+       <div className='text-center '>
+         <input className='p-2 rounded-lg border border-solid dark:bg-slate-300 dark:border-slate-600' placeholder="Quick Search" type="text" />
+       </div>
+     <NavLink
+         to="/"
+         style={({isActive})=>({
+           color: isActive ? "#3490dc" : "",
+           // background: isActive ? "#38BDF8" : "",
+           fontWeight: isActive ?"600":"600",
+         })}
+         className="block p-2 m-1 hover:bg-slate-100 dark:hover:bg-transparent dark:text-slate-300 rounded-2xl">
+
+           <span className='flex items-center'  >
+
+           <HomeIcon className='mx-1 p-1 rounded  dark:bg-slate-100 active:bg-black'/>
+             <span className='p-2'>
+               Home <br />
+               <small className='text-gray-400'>Dashbord to all the feature we had</small>
+             </span>
+           </span>
+     </NavLink>
+     <NavLink
+         to="/Project-1"
+         style={({isActive})=>({
+
+           color: isActive ? "#3490dc" : "",
+           // background: isActive ? "#38BDF8" : "",
+           fontWeight: isActive ?"600":"600",
+
+           // background: isActive ? "#38BDF8" : "",
+         })}
+         className="block p-2 m-1 hover:bg-slate-100 dark:hover:bg-transparent dark:text-slate-300 rounded-2xl">
+
+         
+         <span className='flex items-center'  >
+
+<HomeIcon className='mx-1 p-1 rounded  dark:bg-slate-100 active:bg-black'/>
+ <span className='p-2'>
+         Text-to-Image<br />
+   <small className='text-gray-400'>Generate image from text</small>
+ </span>
+</span>
+     </NavLink>
+     <NavLink
+         to="/Project-2"
+         style={({isActive})=>({
+           color: isActive ? "#3490dc" : "",
+           fontWeight: isActive ?"600":"600",
+           // background: isActive ? "#38BDF8" : "",
+         })}
+         className="block p-2 m-1 hover:bg-slate-100 dark:hover:bg-transparent dark:text-slate-300 rounded-2xl">
+           
+           <span className='flex items-center'  >
+
+           <HomeIcon className='mx-1 p-1 rounded  dark:bg-slate-100 active:bg-black'/>
+             <span className='p-2'>
+         Upscale Image<br />
+               <small className='text-gray-400'>Upscale Image quality </small>
+             </span>
+           </span>
+     </NavLink>
+     <NavLink
+         to="/Project-2"
+         style={({isActive})=>({
+           color: isActive ? "#3490dc" : "",
+           fontWeight: isActive ?"600":"600",
+           // background: isActive ? "#38BDF8" : "",
+         })}
+         className="block p-2 m-1 hover:bg-slate-100 dark:hover:bg-transparent dark:text-slate-300 rounded-2xl">
+           
+           <span className='flex items-center'  >
+
+           <HomeIcon className='mx-1 p-1 rounded  dark:bg-slate-100 active:bg-black'/>
+             <span className='p-2'>
+         Upscale Image<br />
+               <small className='text-gray-400'>Upscale Image quality </small>
+             </span>
+           </span>
+     </NavLink>
+     <NavLink
+         to="/Project-2"
+         style={({isActive})=>({
+           color: isActive ? "#3490dc" : "",
+           fontWeight: isActive ?"600":"600",
+           // background: isActive ? "#38BDF8" : "",
+         })}
+         className="block p-2 m-1 hover:bg-slate-100 dark:hover:bg-transparent dark:text-slate-300 rounded-2xl">
+           
+           <span className='flex items-center'  >
+
+           <HomeIcon className='mx-1 p-1 rounded  dark:bg-slate-100 active:bg-black'/>
+             <span className='p-2'>
+         Upscale Image<br />
+               <small className='text-gray-400'>Upscale Image quality </small>
+             </span>
+           </span>
+     </NavLink>
+     <NavLink
+         to="/Project-2"
+         style={({isActive})=>({
+           color: isActive ? "#3490dc" : "",
+           fontWeight: isActive ?"600":"600",
+           // background: isActive ? "#38BDF8" : "",
+         })}
+         className="block p-2 m-1 hover:bg-slate-100 dark:hover:bg-transparent dark:text-slate-300 rounded-2xl">
+           
+           <span className='flex items-center'  >
+
+           <HomeIcon className='mx-1 p-1 rounded  dark:bg-slate-100 active:bg-black'/>
+             <span className='p-2'>
+         Upscale Image<br />
+               <small className='text-gray-400'>Upscale Image quality </small>
+             </span>
+           </span>
+     </NavLink>
+     <NavLink
+         to="/Project-3"
+         style={({isActive})=>({
+           color: isActive ? "#3490dc" : "",
+           // background: isActive ? "#38BDF8" : "",
+           fontWeight: isActive ?"600":"600",
+          
+           // background: isActive ? "#38BDF8" : "",
+         })}
+         className="block p-2 m-1 hover:bg-slate-100 dark:hover:bg-transparent dark:text-slate-300 rounded-2xl">
+         Project3
+     </NavLink>
+     </nav>
 
 
     </>

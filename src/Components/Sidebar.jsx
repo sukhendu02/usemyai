@@ -1,12 +1,15 @@
 import React from 'react'
 import HomeIcon from '@mui/icons-material/Home';
+// import  from '../Components/Topbar'
 
 import { NavLink, Link } from "react-router-dom";
 
 export default function Sidebar() {
   return (
     <>
-      <nav className='sidenav h-screen fixed shadow-md dark:bg-slate-800 dark:text-white hidden sm:block'>
+      <nav className={`sidenav h-screen fixed shadow-md dark:bg-slate-800 dark:text-white hidden sm:block
+       
+        `}>
         <div className='text-center my-5'>
           <input className='p-2 rounded-lg border border-solid dark:bg-slate-300 dark:border-slate-600' placeholder="Quick Search" type="text" />
         </div>
