@@ -17,10 +17,10 @@ function App() {
 
   return (
     <>
-    <Topbar/>
+    <Topbar className=""/>
     <main className='dark:'>
       <div className="catagory-container">
-        <Category/>
+        {/* <Category/> */}
       </div>
 
     <Routes>        

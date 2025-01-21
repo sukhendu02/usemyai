@@ -11,14 +11,26 @@
 }
 
 .sidenav{
-  width: 250px;
+  width: 280px;
+  overflow-y: scroll;
+  
+}
+.sidenav::-webkit-scrollbar {
+  width: 2px;
+
+}
+.sidenav::-webkit-scrollbar-track {
+
 }
 main{
-  margin-left: 250px;
+  margin-left: 280px;
 }
 @media (max-width: 640px) { 
   main{
     margin-left: 0;
+  }
+  .sidenav{
+    width: 90%;
   }
 }
 @keyframes logo-spin {

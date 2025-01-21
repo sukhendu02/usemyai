@@ -20,7 +20,7 @@ export default function Topbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
     
   const togglenav = () => {
-    setIsNavOpen(isNavOpen);
+    setIsNavOpen(!isNavOpen);
 
   };
 
@@ -46,7 +46,11 @@ export default function Topbar() {
 
   return (
     <>
-      <nav className= {`border-sm   shadow-sm dark:bg-slate-800 dark:text-white dark:border-slate-200 `}    
+
+    <div>
+
+   
+      <nav className= {`border-sm z-0  shadow-sm dark:bg-slate-800 dark:text-white dark:border-slate-200 `}    
       // ''
       >
         <div className="flex justify-between items-center py-4">
@@ -161,17 +165,34 @@ export default function Topbar() {
 
 
       {/* SIDE NAV BAAR */}
-      <nav className={`sidenav fixed h-full  shadow-md dark:bg-slate-800 dark:text-white hidden sm:block
-       
+
+      <nav className={`sidenav  fixed top-0 h-full sm:w-1/4 z-10 shadow-md bg-white dark:bg-slate-800 dark:text-white  sm:block
+     transition-transform duration-300 ${
+          isNavOpen ? "translate-x-0" : "-translate-x-full"
+        } sm:translate-x-0 w-full sm:w-1/4
        `}>
+
+
+       <div className='sticky top-0 p-2 backdrop-blur-lg'>
+         <div className="logo p-3 m-2 text-center hidden sm:block">
+           Logo Here
+         </div>
        <div className='text-center '>
          <input className='p-2 rounded-lg border border-solid dark:bg-slate-300 dark:border-slate-600' placeholder="Quick Search" type="text" />
        </div>
+
+       <div className="close absolute p-2 right-1 top-0 text-lg sm:hidden  " onClick={togglenav}>
+        X
+    </div>
+       </div>
+
+
+      
      <NavLink
          to="/"
          style={({isActive})=>({
            color: isActive ? "#3490dc" : "",
-           // background: isActive ? "#38BDF8" : "",
+           background: isActive ? "#f1f5f9" : "",
            fontWeight: isActive ?"600":"600",
          })}
          className="block p-2 m-1 hover:bg-slate-100 dark:hover:bg-transparent dark:text-slate-300 rounded-2xl">
@@ -280,6 +301,60 @@ export default function Topbar() {
            </span>
      </NavLink>
      <NavLink
+         to="/Project-2"
+         style={({isActive})=>({
+           color: isActive ? "#3490dc" : "",
+           fontWeight: isActive ?"600":"600",
+           // background: isActive ? "#38BDF8" : "",
+         })}
+         className="block p-2 m-1 hover:bg-slate-100 dark:hover:bg-transparent dark:text-slate-300 rounded-2xl">
+           
+           <span className='flex items-center'  >
+
+           <HomeIcon className='mx-1 p-1 rounded  dark:bg-slate-100 active:bg-black'/>
+             <span className='p-2'>
+         Upscale Image<br />
+               <small className='text-gray-400'>Upscale Image quality </small>
+             </span>
+           </span>
+     </NavLink>
+     <NavLink
+         to="/Project-2"
+         style={({isActive})=>({
+           color: isActive ? "#3490dc" : "",
+           fontWeight: isActive ?"600":"600",
+           // background: isActive ? "#38BDF8" : "",
+         })}
+         className="block p-2 m-1 hover:bg-slate-100 dark:hover:bg-transparent dark:text-slate-300 rounded-2xl">
+           
+           <span className='flex items-center'  >
+
+           <HomeIcon className='mx-1 p-1 rounded  dark:bg-slate-100 active:bg-black'/>
+             <span className='p-2'>
+         Upscale Image<br />
+               <small className='text-gray-400'>Upscale Image quality </small>
+             </span>
+           </span>
+     </NavLink>
+     <NavLink
+         to="/Project-2"
+         style={({isActive})=>({
+           color: isActive ? "#3490dc" : "",
+           fontWeight: isActive ?"600":"600",
+           // background: isActive ? "#38BDF8" : "",
+         })}
+         className="block p-2 m-1 hover:bg-slate-100 dark:hover:bg-transparent dark:text-slate-300 rounded-2xl">
+           
+           <span className='flex items-center'  >
+
+           <HomeIcon className='mx-1 p-1 rounded  dark:bg-slate-100 active:bg-black'/>
+             <span className='p-2'>
+         Upscale Image<br />
+               <small className='text-gray-400'>Upscale Image quality </small>
+             </span>
+           </span>
+     </NavLink>
+     <NavLink
          to="/Project-3"
          style={({isActive})=>({
            color: isActive ? "#3490dc" : "",
@@ -291,9 +366,11 @@ export default function Topbar() {
          className="block p-2 m-1 hover:bg-slate-100 dark:hover:bg-transparent dark:text-slate-300 rounded-2xl">
          Project3
      </NavLink>
+   
+
      </nav>
 
-
+     </div>
     </>
   )
 }
